@@ -51,4 +51,8 @@ public class PropertiesRead {
 	public static String getFileSedamSimulation(){
 		return prop.getProperty("file_sedam_simulation");
 	}
+	
+	public static String getFileRebootPc(){
+		return prop.getProperty("file_reboot_pc");
+	}
 }

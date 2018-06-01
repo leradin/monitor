@@ -19,6 +19,7 @@ import com.inidetam.monitor.jpa.OwnConfiguration;
 import com.inidetam.monitor.pojo.Cabin;
 import com.inidetam.monitor.utils.JsonRead;
 import com.inidetam.monitor.utils.PropertiesRead;
+import com.inidetam.monitor.utils.ScriptExecute;
 import com.inidetam.monitor.utils.XmlRead;
 
 public class ReadConfig implements Runnable {
@@ -69,6 +70,7 @@ public class ReadConfig implements Runnable {
 			cabin.getUnit().setPositionNMEAInitial(positionNMEAInitial);
 			update(cabin);
 			new XmlRead(positionNMEAInitial[0]+","+positionNMEAInitial[1]);
+			new ScriptExecute();
 			logger.info(cabin.getId() +" : "+cabin.getUnit().getName());
 		} catch (ParseException | NullPointerException e) {
 			logger.error(e.getClass() +" : "+e.getMessage());
